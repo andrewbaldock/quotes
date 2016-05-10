@@ -4,7 +4,6 @@ html body .app-content {
 html body.home-body .app-content {
   visibility: visible;
 }
-
 .home-body {
   background-color: rgb(0, 43, 60);
   color: #B1EFFB;
@@ -14,7 +13,6 @@ html body.home-body .app-content {
   border-radius: 10px;
   border-color: #044965;
 }
-
 .home-body .title {
   position: relative;
   left: 8px;
@@ -50,81 +48,111 @@ button {
   color: #333;
   font-size: 18px;
   font-weight: 700;
-  opacity: 0.8;
+  opacity: 0.7;
+  font-family: 'Montserrat';
 }
 button:hover {
   opacity: 1.0;
 }
-button.new-subview {
-  width: 156px;
+.ratings button {
+  width: 100px;
 }
-.subview-container {
-  text-align: center;
-  min-height: 120px;
+#lame {
+  background-color: #C1B37E;
 }
-.subview {
-  display: inline-block;
-  padding: 10px;
-  text-align: center;
-  min-height: 20px;
-  border: 1px solid grey;
-  margin: 20px 0;
-  border-radius: 5px;
-  // background: #1C1D1D;
-  position: relative;
-  width: 90%;
-  max-width: 650px;
-  display: inline-block;
-  // background-image: url('../../img/black_linen.png');
+#good {
+  background-color: #ADBCC7;
 }
-
+#great {
+  background-color: #2E9E7B;
+}
 iframe {
   border: none;
 }
-
-.robot-iframe {
+.robot-map-container{
+  width: 500px;
+  display: inline-block;
+  margin: 20px;
+}
+.robot-span {
   height: 100px;
   width: 100px;
+  float: left;
+  display: inline-block;
 }
-
+.map-span img {
+  height: 130px;
+  width: 370px;
+  float: right;
+  display: inline-block;
+}
+.robot-iframe {
+  height: 130px;
+  width: 130px;
+}
 .map-iframe {
-  height: 100px;
-  width: 80%;
+  // height: 100px;
 }
-
-.pulse-text {
-  padding-top: 45px;
+.audio-quote-container{
+  position: absolute;
+  left: -3000px;
+  opacity: 0;
+}
+.audio-iframe {
+  height: 200px;
+  width: 400px;
+}
+.quote-container {
+  padding: 20px;
+  min-height: 100px;
+  min-width: 500px;
+  max-width: 80%;
+  display:inline-block;
+  font-size: 30px;
   font-weight: 400;
-  -webkit-animation: pulsate 7s ease-out;
-  animation: pulsate 7s ease-out;
-  -webkit-animation-iteration-count: infinite;
-  animation-iteration-count: infinite;
-  opacity: 0.01
+  color: #55C8E4;
 }
-@-webkit-keyframes pulsate {
-  0% {
-    -webkit-transform: scale(0.1, 0.1);
-    transform: scale(0.1, 0.1);
-    opacity: 0.01;
-  }
-  50% {
-    opacity: 1.0;
-  }
-  100% {
-    -webkit-transform: scale(1.2, 1.2);
-    transform: scale(1.2, 1.2);
-     opacity: 0.01;
-  }
+.button-holder {
+  display: block;
+  width: 100%;
+}
+.close-list {
+  width: 100px;
+}
+.quotes-table {
+  margin-top: 30px;
+  margin: 20px;
+  display: inline-block;
+  padding: 3px;
+}
+.quotes-table tr,
+.quotes-table th,
+.quotes-table td {
+  border: 1px solid #666;
+  padding: 10px;
+}
+.quote-td {
+  text-align: left;
+}
+.search-div input {
+  font-size: 16px;
+  font-family: 'Montserrat';
+  padding-left: 5px;
+  background-color: #aaa;
+  border-radius: 5px;
+  height: 25px;
+  width: 200px;
 }
 
 .spinner {
-  position: relative;
-  top: 10px;
+  position: absolute;
+  top: 380px;
+  left: 50%;
+  margin-left: -50px;
 }
-.done .spinner {
-  visibility: hidden!important;
-}
-
+// .done .spinner {
+//   visibility: hidden!important;
+// }
 
 /* Spinkit overrides */
 .sk-three-bounce {
@@ -135,7 +163,6 @@ iframe {
 .sk-three-bounce div {
   background-color: #5C92A2!important;
 }
-
 
 // responsive
 @media only screen and (max-width:600px) {

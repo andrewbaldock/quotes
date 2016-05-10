@@ -11,13 +11,16 @@ define(function (require) {
         this.model = require('home/models/quote');
       },
 
+      // Proof-of-concept store data to localstorage.
+      // TODO: save to mongo
+
       save: function() {
         var toSave = JSON.stringify(this.models);
-        localStorage.setItem('owlQuotes', toSave);
+        localStorage.setItem('myQuotes', toSave);
       },
 
       load: function() {
-        var toLoad = localStorage.getItem('owlQuotes') || [];
+        var toLoad = localStorage.getItem('myQuotes') || [];
         if (toLoad.length) {
           toLoad = JSON.parse(toLoad);
         }

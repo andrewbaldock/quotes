@@ -10,8 +10,6 @@ define(function (require) {
   var AppRouter = Backbone.Router.extend({
     routes: {
       '': 'goTo_homeView'
-      // '': 'goTo_otherView'
-
     },
 
     initialize: function(){
@@ -27,12 +25,6 @@ define(function (require) {
       this.container.render();
       this.state.set('view', 'home');
     },
-
-    // goTo_otherView: function() {
-    //   this.container.render();
-    //   this.state.set('view', 'other');
-    // },
-
 
   });
 

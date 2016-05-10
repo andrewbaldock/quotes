@@ -77,12 +77,9 @@ a:hover {
   padding: 15px;
   margin: 30px 15px 15px 15px;
   text-align: center;
+  background: url('../../img/black_linen.png');
 }
 
 .description {
   font-size: 13px;
 }
-
-
-
-

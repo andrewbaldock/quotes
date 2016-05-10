@@ -9,18 +9,11 @@ define(function (require) {
 
   return Backbone.View.extend({
 
-    // EVENTS -----------------------------------------------
-
-    events: {
-      //
-    },
-
-    // INITIALIZE -------------------------------------------
+    // INITIALIZE -------------------------------------------------
 
     initialize: function(options) {
       this.state = options.state;
     },
-
 
     // RENDER ------------------------------------------------
 
@@ -33,8 +26,7 @@ define(function (require) {
 
     getRenderData: function() {
       var ip = this.state.get('ip') || '10.10.10.10'
-      var url = 'https://robohash.org/' + ip + '.png?bgset=bg1&size=100x100'
-
+      var url = 'https://robohash.org/' + ip + '.png?bgset=bg1&size=130x130'
       return {
         url: url
       }

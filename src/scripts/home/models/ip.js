@@ -16,9 +16,7 @@ define(function (require) {
       onSync: function() {
         var ip = this.get('query');
         this.state.set({ip: ip});
-        console.log('ip was set by ip model: ' + ip);
       }
-
 
     });
 });

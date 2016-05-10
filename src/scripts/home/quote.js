@@ -3,9 +3,7 @@ define(function (require) {
   'use strict';
 
   var Backbone = require('backbone');
-
   var QuoteModel = require('home/models/quote');
-  var QuotesCollection = require('home/collections/quotes');
 
   var tpl = require('text!home/templates/quote.ejs');
   var template = _.template(tpl);
@@ -25,23 +23,19 @@ define(function (require) {
 
     initialize: function(options) {
       this.state = options.state;
+      this.collection = options.collection;
       this.model = new QuoteModel({}, {state:this.state});
-      this.collection = new QuotesCollection({},{state: this.state});
       this.listenTo(this.model, 'sync', this.showQuote);
       this.listenTo(this.state, 'play-quote', this.playQuote);
     },
 
-    // Actions -------------------------------------------------
+    // RENDER ------------------------------------------------
 
-    rateQuote: function(e) {
-      var rating = e.currentTarget.id;
-      this.model.set({rating: rating});
-      this.addToCollection(this.model);
-      // console.log('rated it!');
-      this.showSpinner();
-      window.setTimeout(function(){
-        this.render();
-      }.bind(this), 1200);
+    render: function() {
+      this.$el.html(template());
+      this.$el.addClass('quote');
+      this.getQuote();
+      return this;
     },
 
     getQuote: function() {
@@ -51,24 +45,20 @@ define(function (require) {
     showQuote: function(model) {
       this.$('.quote-container').html(this.model.get('content'));
       this.$('.audio-quote-container').html(spokenTemplate());
-
-      // console.log('view/quote.js showQuote');
-      // console.log(this.collection);
     },
 
+    // Actions -------------------------------------------------
 
+    rateQuote: function(e) {
+      this.$('.quote-container').html('');
 
-    // RENDER ------------------------------------------------
-
-    render: function() {
-      this.$el.html(template(this.getRenderData()));
-      this.$el.addClass('quote');
-      this.getQuote();
-      return this;
-    },
-
-    getRenderData: function() {
-      return {}
+      var rating = e.currentTarget.id;
+      this.model.set({rating: rating});
+      this.addToCollection(this.model);
+      this.showSpinner();
+      window.setTimeout(function(){
+        this.render();
+      }.bind(this), 1200);
     },
 
     playQuote: function() {
@@ -79,14 +69,12 @@ define(function (require) {
       this.$('.audio-quote-container iframe').attr('src', url);
     },
 
-
     // UTILS -------------------------------------------------
 
     addToCollection: function(model) {
       this.collection.load();
       this.collection.add(model);
       this.collection.save();
-      // console.log(this.collection.models);
     },
 
     showSpinner: function() {

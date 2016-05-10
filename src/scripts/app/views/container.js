@@ -38,8 +38,6 @@ define(function (require) {
         window.app = this.view;
       }
 
-      // add new modules here [1 of 3]
-
       this.$('.container').html(this.view.render().el);
       this.updateNav();
     },
@@ -57,15 +55,6 @@ define(function (require) {
       this.removeSubViews();
       Backbone.View.prototype.remove.apply(this,arguments);
     }
-
-    /* ----------------------------------------------------------------------------------------
-
-    Adding a new module?  Add at the above listed points, then also:
-
-    [2 of 3] add the modules' routes to /src/scripts/app/router.js
-    [3 of 3] add the modules style.css to the @imports at top of  /src/scripts/ttt/style.css
-
-     ---------------------------------------------------------------------------------------- */
 
   })
 
