@@ -95,8 +95,8 @@ define(function (require) {
 
     showQuoteList: function() {
       this.renderQuoteList();
-      this.$('.not-list-container, .search-div').hide();
-      this.$('.list-container').show();
+      this.$('.not-list-container').hide();
+      this.$('.list-container, .search-div').show();
     },
 
     renderQuoteList: function() {
@@ -109,8 +109,8 @@ define(function (require) {
     },
 
     closeListView: function() {
-      this.$('.not-list-container, .search-div').show();
-      this.$('.list-container').hide();
+      this.$('.not-list-container').show();
+      this.$('.list-container, .search-div').hide();
     },
 
     yoda: function() {

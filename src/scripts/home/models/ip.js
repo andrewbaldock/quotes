@@ -6,7 +6,7 @@ define(function (require) {
 
     return Backbone.Model.extend({
 
-      url: 'http://ip-api.com/json',
+      url: '//ip-api.com/json',
 
       initialize: function(options) {
         this.state = options.state;

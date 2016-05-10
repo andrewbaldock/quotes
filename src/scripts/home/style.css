@@ -115,9 +115,13 @@ iframe {
 .button-holder {
   display: block;
   width: 100%;
+  height: 15px;
 }
 .close-list {
-  width: 100px;
+  width: 200px;
+  position: absolute;
+  left: 53px;
+  top: 282px;
 }
 .quotes-table {
   margin-top: 30px;
@@ -138,10 +142,12 @@ iframe {
   font-size: 16px;
   font-family: 'Montserrat';
   padding-left: 5px;
-  background-color: #aaa;
+  background-color: #CCDFE2;
   border-radius: 5px;
-  height: 25px;
+  height: 23px;
   width: 200px;
+  position: absolute;
+  right: 53px;
 }
 
 .spinner {
