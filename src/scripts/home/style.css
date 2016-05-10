@@ -105,7 +105,7 @@ iframe {
 .quote-container {
   padding: 20px;
   min-height: 100px;
-  min-width: 500px;
+  min-width: 400px;
   max-width: 80%;
   display:inline-block;
   font-size: 30px;
@@ -170,11 +170,4 @@ iframe {
   background-color: #5C92A2!important;
 }
 
-// responsive
-@media only screen and (max-width:600px) {
-
-}
-@media only screen and (max-width:480px) {
-
-}
 
